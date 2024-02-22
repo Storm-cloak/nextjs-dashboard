@@ -11,7 +11,8 @@ export default async function InvoicesTable({
   query: string;
   currentPage: number;
 }) {
-  const invoices = await fetchFilteredInvoices(query, currentPage);
+  const delay = await new Promise(resolve => setTimeout(resolve, 1000));
+  const invoices: any[] = [];
 
   return (
     <div className="mt-6 flow-root">
